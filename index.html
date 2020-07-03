@@ -73,7 +73,7 @@
         addJapaneseSymbol: function () {
           const kahoSymbol = "゛";
 
-          const charArray = this.inputMessage.split("");
+          const charArray = [...this.inputMessage];
           this.message = charArray.join(kahoSymbol);
           this.message += kahoSymbol;
         },
