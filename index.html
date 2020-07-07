@@ -29,6 +29,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
   </head>
 
   <body>
@@ -58,11 +59,17 @@
         </button>
       </div>
       <div class="row justify-content-center mt-5">
-        {{message}}
+        <span id="clipcopy">{{message}}</span>
+      </div>
+      <div class="row justify-content-center">
+        <button class="btn btn-success copy" data-clipboard-target="#clipcopy">
+          結果をクリップボードにコピー
+        </button>
       </div>
     </div>
   </body>
   <script>
+    new ClipboardJS(".copy");
     var app = new Vue({
       el: "#app",
       data: {
